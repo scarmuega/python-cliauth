@@ -1,0 +1,14 @@
+.pytest_cache
+__pycache__
+
+arcomm.params
+
+*.bag
+
+*.egg-info
+
+dist
+build
+
+.vscode
+.idea
