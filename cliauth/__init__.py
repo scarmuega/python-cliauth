@@ -1,4 +1,5 @@
 import requests
+import jwt
 from time import sleep
 from typing import NamedTuple
 
@@ -90,5 +91,12 @@ class DeviceAuthFlow():
     def get_token(self):
         if self.__token_res:
             return self.__token_res.get('access_token')
+        else:
+            return None
+
+    def get_parsed_id_token(self):
+        if self.__token_res:
+            id_token = self.__token_res.get('id_token')
+            return jwt.decode(id_token, verify=False)
         else:
             return None
